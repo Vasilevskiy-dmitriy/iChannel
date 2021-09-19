@@ -43,7 +43,6 @@ class adminController extends Controller
         
         $title = $_POST['title'];
         $text = $_POST['text'];
-        $text = '<pre>' . $text . '</pre>'; 
         $categories = $_POST['categories'];
         $image = $_FILES['image'];
         
@@ -77,7 +76,6 @@ class adminController extends Controller
         $id = $id['id'];
         $title = $_POST['title'];
         $text = $_POST['text'];
-        $text = '<pre>' . $text . '</pre>'; 
         $categories = $_POST['categories'];
         $image = $_FILES['image'];
 
