@@ -32,7 +32,7 @@ $array = ( new db ) ->queryTableLimit('news',3);
             </div>
 
                 <div class="container">
-                    <?foreach($array as $arr):?>
+                    <?php foreach($array as $arr):?>
                         <div class="col">
 
                             <div class="time"><?$date_sql = strtotime( $arr['time']); echo date( 'H:i', $date_sql );?></div>
@@ -54,7 +54,7 @@ $array = ( new db ) ->queryTableLimit('news',3);
                             <img src="/project/img/<?=$arr['img']?>" alt="" style="height: 100px; width:100px">
 
                         </div>
-                    <?endforeach?>
+                    <?php endforeach?>
                 </div>
         </div>
 

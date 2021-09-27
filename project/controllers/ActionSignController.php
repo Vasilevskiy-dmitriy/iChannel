@@ -4,7 +4,7 @@ use core\Controller;
 use lib\db;
 use lib\session;
 
-class actionSignController extends Controller
+class ActionSignController extends Controller
 {
     public function SignIn()
     {

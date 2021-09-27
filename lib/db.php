@@ -120,7 +120,7 @@ class db {
         $result = $query;
         return mysqli_fetch_assoc($result);
     }
-    public function EditNews($title, $text, $categories, $img=null, $id)
+    public function EditNews($title, $text, $categories, $img, $id)
     {
         $query = "UPDATE `news` SET `title`='$title', `text` = '$text', `categories` = '$categories', `img` = '$img' WHERE `news`.`id`=$id";
        

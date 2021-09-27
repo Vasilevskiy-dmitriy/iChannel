@@ -6,7 +6,7 @@
     
         <div class="container">
 
-            <?foreach($news as $arr):?>
+            <?php foreach($news as $arr):?>
            <div class="col">
                 <div class="time"><?
                     $date_sql = strtotime( $arr['time']);
@@ -20,7 +20,7 @@
                 </div>
                 <img src="/project/img/<?=$arr['img']?>" alt="" style="height: 100px; width:100px">
             </div>
-            <?endforeach?>
+            <?php endforeach?>
 
     </div>   
 </main>

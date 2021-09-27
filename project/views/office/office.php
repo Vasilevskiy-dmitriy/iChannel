@@ -59,9 +59,9 @@ setcookie('editPasswA', 'none');
             <div class="content_comments" style="width:100%; margin-top:25px">
                 <div class="title_comments">Мои коментарии:(<?=count($arrayCom)?>)</div>
 
-                    <?foreach($arrayCom as $arr):?>
+                    <?php foreach($arrayCom as $arr):?>
 
-                    <?$name_p = ( new db )->querygetNewsId('news', $arr['page_id']);?>
+                    <?php $name_p = ( new db )->querygetNewsId('news', $arr['page_id']);?>
 
                         <div class="container_comm">
 
@@ -69,21 +69,21 @@ setcookie('editPasswA', 'none');
 
                             <div class="name_comment">
                                 <div class="F_P">К посту о: 
-                                    <a href="/page/<?=$arr['page_id']?>"><?echo $name_p['title']?></a>
+                                    <a href="/page/<?=$arr['page_id']?>"><?php echo $name_p['title']?></a>
                                 </div>
                             </div>
                             <div class="text_comm_cont"><?=$arr['text']?></div>
                             <div class="time_comm"><?=$arr['time']?></div>
                             
-                            <?if(trim($arr['name']) === trim($_SESSION['name'])):?>
+                            <?php if(trim($arr['name']) === trim($_SESSION['name'])):?>
                             <a style="color: red;font-weight: 900;font-size: 12px;margin-top: 10px;" href="/deleteCom/<?=$arr['id']?>">Delete</a>
-                            <?endif?>
+                            <?php endif?>
 
                             </div>
 
                         </div>
 
-                    <?endforeach?>
+                    <?php endforeach?>
         </div>
 
         </div>

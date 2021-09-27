@@ -1,14 +1,14 @@
-<?
+<?php
 use lib\db;
 
 $db = new db;
 $array = $db->query('categories');
 ?>
 
-<?if(!empty($_SESSION['name'])):?>
-    <?$arrayFromURI = explode('/', $_SERVER['REQUEST_URI'])?>
-    <?if($arrayFromURI[1] === 'admin'):?>
-        <?if(trim($_SESSION['name']) === 'Админ'):?>
+<?php if(!empty($_SESSION['name'])):?>
+    <?php $arrayFromURI = explode('/', $_SERVER['REQUEST_URI'])?>
+    <?php if($arrayFromURI[1] === 'admin'):?>
+        <?php if(trim($_SESSION['name']) === 'Админ'):?>
         
         <!DOCTYPE html>
         <html lang="en">
@@ -62,9 +62,9 @@ $array = $db->query('categories');
         </body>
         </html>
 
-        <?else: header('Location:/')?>
-        <?endif?>
-    <?else:?>
+        <?php else: header('Location:/')?>
+        <?php endif?>
+    <?php else:?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -96,16 +96,16 @@ window.onclick = function(event) {
 }
 </script>
   <header>
-        <div class="time_header">Kyiv <?=date("H:i");?> </div>
+        <div class="time_header">Kyiv <?php echo date("H:i");?> </div>
         <div>
             <a class="text_header" style="color: white;" href="/">Information channel</a> 
         </div>
            <div class="log_out_header">
-              <img src="/project/img/<?=$_SESSION['img']?>" alt="" onclick="myFunction()" class="dropbtn">
+              <img src="/project/img/<?php echo $_SESSION['img']?>" alt="" onclick="myFunction()" class="dropbtn">
             <div id="myDropdown" class="dropdown-content">
-            <?if(trim($_SESSION['name']) === 'Админ'):?>
+            <?php if(trim($_SESSION['name']) === 'Админ'):?>
                 <a href="/admin">Управление сайтом</a>
-                <?endif?>
+                <?php endif?>
                 <a href="/privateoffice">Личный кабинет</a>
                 <a href="/logout">Выйти</a>
             </div>
@@ -116,8 +116,8 @@ window.onclick = function(event) {
     </header>
 
     <div class="catalog">
-        <?foreach($array as $arrs):?>
-     <?
+        <?php foreach($array as $arrs):?>
+     <?php
         $arrayFromURI = explode('/', $_SERVER['REQUEST_URI']);
         
         if(!empty($arrayFromURI[2]))
@@ -133,11 +133,11 @@ window.onclick = function(event) {
         
         
         ?>
-            <a style="<?=$styleborder?>" href="/category/<?=$arrs['tegs']?>" class="catalog_link"><?=$arrs['name']?></a>
-        <?endforeach?>
+            <a style="<?php echo $styleborder?>" href="/category/<?php echo $arrs['tegs']?>" class="catalog_link"><?php echo $arrs['name']?></a>
+        <?php endforeach?>
     </div>
 
-   <?=$content?>
+   <?php echo $content?>
     
   <footer>
         <div class="footer_container">
@@ -164,8 +164,8 @@ window.onclick = function(event) {
 
 	</body>
 </html>
-<?endif?>
-<?else:?>
+<?php endif?>
+<?php else:?>
 
 
 <link rel="stylesheet" href="/project/webroot/wq.css">
@@ -201,4 +201,4 @@ else{
 }
 ?>
 
-<?endif?>
+<?php endif?>
