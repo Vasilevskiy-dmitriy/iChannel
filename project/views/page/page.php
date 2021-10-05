@@ -3,7 +3,7 @@
 <main style="display: flex;">
     <div class="container_news">
         
-        <div class="title_news"><?php=$array['title']?></div>
+        <div class="title_news"><?php echo $array['title']?></div>
         <div style="margin:20px 0; display:flex;">
         <a href="/category/<?=$array['categories']?>" class="tegs" style="background: gray;color: black;font-weight: 900;padding: 3px 10px;"> #<?=$array['categories']?></a>
             <div style="background: gray;color: black;font-weight: 900;padding: 3px 3px 3px 0;">/</div><div style="background:gray;color:white;font-weight: 100;padding: 3px 10px 0 0;" class="time_news"><?=$array['time']?></div>
