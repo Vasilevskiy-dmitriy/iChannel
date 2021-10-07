@@ -7,12 +7,22 @@ use Project\Models\Admin;
 
 class adminController extends Controller
 {
+
+// Admin
     public function admin ()
     {
         $data = ( new Admin )->getDateForAllInfo();
 
         return $this->render('admin/admin', $data);
     }
+
+
+// Catalog
+public function admin_catalog ()
+{
+    $data = ( new Admin )->getData();
+    return $this->render('admin/catalog', $data);
+}   
 
 // NEWS
     public function action_delete_news_checkbox()
@@ -96,16 +106,11 @@ class adminController extends Controller
         header('Location:/admin/news');
     }
 
-
-    public function admin_users ()
+// Users
+    public function admin_comments ()
     {
-
+        $data = ( new Admin )->getData();
+        return $this->render('admin/comments', $data);
     }
 
-    // private function str_r($text)
-    // {
-    //     $arrayS = ['#', '/' , '*', '`', '-', ];
-    //     $arrayZ = ['<p>' , '</p>','<strong>', '<i>', ''];
-    //     return str_replace($arrayS, $arrayZ, "$text");
-    // }
 }

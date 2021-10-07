@@ -55,13 +55,19 @@ return [
 	 */
 
 	new Route('/admin', 'admin', 'admin'),
-	new Route('/admin/action_delete_news_checkbox', 'admin', 'action_delete_news_checkbox'),
-	new Route('/admin/news', 'admin', 'news'),
-	new Route('/admin/users', 'admin', 'users'),
+
+	// Catalog
+	new Route('/admin/catalog', 'admin', 'admin_catalog'),
+	//  NEWS
 	new Route('/admin/news/add', 'admin', 'addNews'),
 	new Route('/admin/news/actionAddNews', 'admin', 'actionAddNews'),
 	new Route('/admin/news/edit/:id', 'admin', 'EditNews'),
 	new Route('/admin/news/edit/actionEditNews/:id', 'admin', 'actionEditNews'),
-
+	new Route('/admin/news', 'admin', 'news'),
+	new Route('/admin/action_delete_news_checkbox', 'admin', 'action_delete_news_checkbox'),
+	// Users
+	new Route('/admin/users', 'admin', 'admin_users'),
+	// Comments
+	new Route('/admin/comments', 'admin', 'admin_comments'),
 	];
 	

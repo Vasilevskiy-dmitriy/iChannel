@@ -6,6 +6,7 @@ use lib\db;
 
 class Admin extends Model
 {
+    // NEWS
     public function getDateForAllInfo()
     {
         $arrayCom = ( new db );
@@ -23,12 +24,14 @@ class Admin extends Model
     {
         $arrayNews = ( new db )->queryRevers('news');
         $arrayCatAdd = ( new db )->query('categories');
+        $arrayUsers = ( new db )->query('users');
+        $arrayComments = ( new db )->query('comments');
 
         return [ 
             "arrayNews" => $arrayNews,
             "arrayCategoriesAdd" => $arrayCatAdd,
-            // "arrayUsers" => $arrayUsers,
-            // "arrayComments" => $arrayCom
+            "arrayUsers" => $arrayUsers,
+            "arrayComments" => $arrayComments
         ];
     }
     public function getDataId ($id)
