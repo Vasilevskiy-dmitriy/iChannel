@@ -1,6 +1,6 @@
 # iChannel
 
-My first projeckt in PHP
+### My first projeckt in PHP
 
 Model: MVC
 
